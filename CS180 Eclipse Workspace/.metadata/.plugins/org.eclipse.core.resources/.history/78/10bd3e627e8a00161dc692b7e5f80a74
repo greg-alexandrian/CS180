@@ -1,0 +1,73 @@
+/**************************
+ *  Author: Emil Radisevic
+
+ *  Date.: 9-27-2016
+ **************************/
+
+import java.util.Scanner;
+
+public class DiamondPrint {
+	public static void main(String[] args)
+	{
+		//scanner is needed for user input of integers
+		Scanner input = new Scanner(System.in);
+
+		int numberOfRows, middleRow; 
+
+		System.out.println("How many rows would you like your pyramid to be? (please enter only integers)");
+		numberOfRows = input.nextInt(); // length of the pyramid that is wanted by user (from top to bottom)
+		/*middleRow = ((numberOfRows + 1) / (2) ); //middleRow is the middle row and has numRows number of *'s. I had to look up the dimensions of a diamond and finally figured out the length of the middle was +1 and divided by 2 (comparative to the amount of rows)
+
+		int difference=0;
+
+		//difference is needed for later if/else statement to print asterisks up to middle row, then decrease asterisks after middle row
+		//prints rows
+		//i is used for variable in for loop, and i2 for nested for loops (lower limit, upper limit and counter)
+		for(int i=1;i<numberOfRows+1;i++)
+		{
+			//for needed for counter spaces that are blank (not asterisk)
+			for(int i2=1;i2<numberOfRows+1;i2++)
+			{	//this part tells when code reaches middle row and uses if/else at the bottom to subtract asterisks. it took me a while to figure this part out because I kept having an infinite loop.
+				if(((middleRow-difference)<=i2 && (i2<=middleRow+difference)))
+				{
+					System.out.print("*");
+				}else
+				{
+					System.out.print(" ");
+				}
+
+			}
+			//uses middle row as variable to determine how many asterisks. the difference is crucial so the code knows when to continue printing *'s
+			System.out.println();
+			if(i<middleRow)
+			{
+				difference++;
+			}else
+			{
+				difference--;
+			}
+		}*/
+
+
+		for(int row = 1; row < (numberOfRows + 1)/2; row ++){
+			for(int spaces = 1; spaces < (numberOfRows+1)/2 - row; spaces++){
+				System.out.print(" ");
+			}
+			for(int stars =1; stars <= 2*row - 1; stars++){
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+		for(int row = (numberOfRows + 1)/2; row >= 1 ; row --){
+			for(int spaces = 1; spaces < (numberOfRows+1)/2 - row; spaces++){
+				System.out.print(" ");
+			}
+			for(int stars =1; stars <= 2*row - 1; stars++){
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+	}
+
+}
+

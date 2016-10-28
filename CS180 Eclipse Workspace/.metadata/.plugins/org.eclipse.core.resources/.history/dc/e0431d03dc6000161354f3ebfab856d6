@@ -1,0 +1,7 @@
+import java.util.LinkedList;
+
+public class HashTblDemo {
+	
+	LinkedList[] myHashTable = new LinkedList[10];
+	//myHashTable[0] = null;
+}

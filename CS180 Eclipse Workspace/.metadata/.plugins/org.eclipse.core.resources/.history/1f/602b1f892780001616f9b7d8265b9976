@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+
+public class BakingBread {
+
+	public static void main(String[] args) {
+		/*'
+		 * for every spoon of flower (up t0 10)
+		 * 		stir and see if smooth
+		 * 		do that up to 10 times but proceed if already smooth
+		 */
+		
+		/*
+		 * for every spoon
+		 * 		add flower
+		 * 		ask user if smooth (enter 1 if smooth, 2 if not smooth)
+		 * 			if not smooth
+		 * 		stir
+		 * 		repeat 10 or until user says it is smooth
+		 */
+		Scanner input = new Scanner(System.in);
+		/*int yesNo;
+		continueTag:
+		for(int spoonNum = 1; spoonNum <= 5; spoonNum++){
+			System.out.println("Adding a spoon of flower");
+			for(int stirCount = 1; stirCount <= 5; stirCount++){
+				System.out.println("Stirring!");
+				System.out.println("Is it smooth? 1 for yes 2 for no");
+				yesNo = input.nextInt();
+				if(yesNo == 1){
+					//break;
+					continue continueTag;
+				}
+			}
+		}*/
+		int spoonCounter=0;
+		int mixingCounte = 0;
+		
+		while (spoonCounter < 3){
+			System.out.println(spoonCounter+1 + "Flower is added");
+		}
+			
+	}
+
+}

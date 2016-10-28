@@ -1,0 +1,16 @@
+
+public class Time1 {
+	public static void main(String[] args) {
+		  Time2 time1 = new Time2(8, 15, 25);
+		  displayTime("the time you woke up:", time1);
+		  
+		  time1.tick(86400);
+		  
+		  displayTime("the time you woke up:", time1);
+	}
+	   private static void displayTime(String header, Time2 t)
+	   {
+	      System.out.printf("%s%n   %s%n   %s%n",
+	         header, t.toUniversalString(), t.toString());
+	   } 
+}

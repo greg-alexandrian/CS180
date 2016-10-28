@@ -1,0 +1,6 @@
+
+public class CheckingAccount extends Account {
+	public CheckingAccount(String name, String pin, double balance){
+		super(name, pin, balance);
+	}
+}

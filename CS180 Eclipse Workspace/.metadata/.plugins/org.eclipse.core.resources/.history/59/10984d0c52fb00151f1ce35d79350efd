@@ -1,0 +1,133 @@
+/******************************
+ * 
+ * Evan Stone
+ * 3/31/16
+ * Chapter 7 assignment part 2
+ * 
+ ******************************/
+// Craps class simulates the dice game craps.
+import java.security.SecureRandom;
+
+public class Craps 
+{
+   // create secure random number generator for use in method rollDice
+   private static final SecureRandom randomNumbers = new SecureRandom();
+
+   // enum type with constants that represent the game status
+   private enum Status {CONTINUE, WON, LOST};
+
+   // constants that represent common rolls of the dice
+   private static final int SNAKE_EYES = 2;
+   private static final int TREY = 3;
+   private static final int SEVEN = 7;
+   private static final int YO_LEVEN = 11;
+   private static final int BOX_CARS = 12;
+   
+   private static int frequency[]; // array recording frequency of wins (ex,...wins on roll 1,2,3...)
+
+   // plays one game of craps
+   public static void main(String[] args){
+   /*
+    * 1. make the game run 1000 times
+    * 		print out statistics for each of the first 20 games
+    * 			after the first 20 games only record whether you won or lost the game
+    * 
+    */
+   
+   
+   
+      frequency = new int[21];
+      for(int index = 0; index < frequency.length; index++){
+    	  frequency[index]=0;
+      }
+	 //put all code into for loop that runs 1000 time
+      for(int gameNumber = 1; gameNumber <= 1000; gameNumber++) {
+      frequency[playCraps()]++;
+      
+     //update to capture the return which is the roll # on which game stops
+      }
+      //if that #is < 0 -- ignore, else increment the corresponding bucket of frequency array
+      
+      //display the frequency array 
+      for(int index = 1; index < frequency.length; index++){
+    	  System.out.println("You won the game on roll " + index + " : " + frequency[index] + " times");
+    	  
+      }
+   }  
+   
+
+   public static int playCraps(){
+	   
+	   int rollCount = 0;
+	   int wonGame = 0;
+	   int myPoint = 0; // point if no win or loss on first roll
+	      Status gameStatus; // can contain CONTINUE, WON or LOST
+
+	      int sumOfDice = rollDice(); // first roll of the dice
+	      rollCount++;
+
+	      // determine game status and point based on first roll 
+	      switch (sumOfDice) 
+	      {
+	         case SEVEN: // win with 7 on first roll
+	         case YO_LEVEN: // win with 11 on first roll           
+	            gameStatus = Status.WON;
+	            break;
+	         case SNAKE_EYES: // lose with 2 on first roll
+	         case TREY: // lose with 3 on first roll
+	         case BOX_CARS: // lose with 12 on first roll
+	            gameStatus = Status.LOST;
+	            break;
+	         default: // did not win or lose, so remember point         
+	            gameStatus = Status.CONTINUE; // game is not over
+	            myPoint = sumOfDice; // remember the point
+	            //System.out.printf("Point is %d%n", myPoint);
+	            break;
+	      } 
+
+	      // while game is not complete
+	      while (gameStatus == Status.CONTINUE) // not WON or LOST
+	      { 
+	         sumOfDice = rollDice(); // roll dice again
+	         rollCount++;
+
+	         // determine game status
+	         if (sumOfDice == myPoint) // win by making point
+	            gameStatus = Status.WON;
+	         else 
+	            if (sumOfDice == SEVEN){ // lose by rolling 7 before point
+	               gameStatus = Status.LOST;
+	         rollCount = 0;}
+	      } 
+
+	      // display won or lost message
+	      if (gameStatus == Status.WON) {
+	         if(rollCount > 20) {
+	        	 frequency[frequency.length-1]++;
+	         }
+	         else {
+	        	 frequency[rollCount-1]++;
+	         }
+	      }if(rollCount > 20){
+	    	   rollCount = 20;
+	      }
+	      return rollCount;
+	      
+   }
+   // roll dice, calculate sum and display results
+   public static int rollDice()
+   {
+      // pick random die values
+      int die1 = 1 + randomNumbers.nextInt(6); // first die roll
+      int die2 = 1 + randomNumbers.nextInt(6); // second die roll
+
+      int sum = die1 + die2; // sum of die values
+
+      // display results of this roll
+      //System.out.printf("Player rolled %d + %d = %d%n", 
+         //die1, die2, sum);
+
+      return sum; 
+   }
+} // end class Craps
+

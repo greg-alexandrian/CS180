@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/session3/src/edu/edgewood/rcs217/session3Solutions/CreateTextFile.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="edu.edgewood.rcs217.session3Solutions.CreateTextFile"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="session3"/>
+</launchConfiguration>

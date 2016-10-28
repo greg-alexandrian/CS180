@@ -1,0 +1,29 @@
+//Michael Lange	
+import java.util.Scanner;//declare scanner
+
+public class ConvertingTemperatures {//how to convert
+	/* Celsius to Fahrenheit- T(°F) = T(°C) × 1.8 + 32
+	 * Fahrenheit to Celsius - T(°C) = (T(°F) - 32) / 1.8
+	 */
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);//ask and accept inputs from user
+			System.out.println("Please enter the temp. in Celsius");
+				double Celsius = input.nextDouble();
+				double Fahrenheit = getFahrenheit(Celsius);
+		System.out.println("The temp. you entered is:" + Fahrenheit + "In Fahrenheit");
+		System.out.println("Please enter the temp. in Fahrenheit");
+			Fahrenheit = input.nextDouble();
+			Celsius = getCelsius(Fahrenheit);
+		System.out.println("The temp. you entered is:" + Celsius + "In Celsius");// tell user what the answer is	
+
+	}
+	public static double getCelsius(double Fahrenheit){//method declaring how to solve for Celsius
+		double Celsius = (Fahrenheit  - 32) / 1.8;
+		return Celsius;
+	}
+	public static double getFahrenheit(double Celsius){//method declaring how to solve for Fahrenheit
+		double Fahrenheit = Celsius * 1.8 + 32;
+		return Fahrenheit;
+	}
+}

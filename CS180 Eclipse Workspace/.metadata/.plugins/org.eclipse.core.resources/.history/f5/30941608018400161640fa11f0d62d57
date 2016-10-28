@@ -1,0 +1,8 @@
+package edu.ec.recursion;
+
+public class Snippet {
+	public static void main(String[] args) {
+		BigInteger.valueOf(100)
+	}
+}
+

@@ -1,0 +1,23 @@
+package eight.one.five;
+/*
+ * Application will output the date in three different formats
+ * 1st Case: MM/DD/YYYY
+ * 2nd Case: "April" 14, 2015  Need to convert String to numeric value to validate month name is within range
+ * 3rd Case: DDD/YYY
+ */
+public class DateTest {
+
+	public static void main(String[] args) {
+		//Validate that the dates fall in range
+		
+		Date d1 = new Date(8, 20, 2010);  //Case #1
+		Date d2 = new Date("August", 1, 2010);//Case # 2  //look into using for loop use array to hold value of months
+		Date d3 = new Date(309, 2016);  //Case # 3
+		
+		
+		System.out.println(d1);
+		System.out.println(d2);
+		System.out.println(d3);
+	}
+
+}

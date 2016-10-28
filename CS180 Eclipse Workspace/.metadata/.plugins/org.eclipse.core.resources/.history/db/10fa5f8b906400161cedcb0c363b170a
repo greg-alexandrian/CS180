@@ -1,0 +1,15 @@
+import java.util.Hashtable;
+import java.util.LinkedList;
+
+public class HashTblDemo {
+	
+	public static void main(String [] args){
+		LinkedList[] myHashTable = new LinkedList[10];
+		myHashTable[0] = new LinkedList<Integer>();	
+		myHashTable[1] = new LinkedList<String>();
+		Hashtable<String, Integer> aHashTable = new Hashtable<String, Integer>();
+		String name = "Greg";
+		String lName = "Alexandrian";
+		System.out.println(name.compareTo(lName));
+	}
+}

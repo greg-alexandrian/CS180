@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+/****************************************************************
+ * Name: Greg...
+ * Date:....
+ * Version 1.0
+ *****************************************************************/
+//Demo of integer arithmetic in Java
+public class ArithmeticDemo {
+
+	public static void main(String[] args) {
+		int age ;
+		System.out.println("Enter your current age:");
+		Scanner input = new Scanner(System.in);
+		age = input.nextInt();
+		System.out.printf("I captiored you age being %d:\n", age);
+		System.out.println("Your age in 10 years will be: "+(age + 10));
+		/*
+		 * Display a message "In 10 years you will be senior citizen" in case if age will become more thant 62
+		 * Exeriment with moving else block to the end...
+		 */
+		if(age +10 > 62){
+			System.out.println("In 10 years you will be a senior citizen");
+		}
+		else{
+			System.out.println("You are going to be still pretty young");
+		}
+		if(age + 10 < 21){
+			System.out.println("In 10 years you still cannot drink;");
+		}
+
+	}
+
+}

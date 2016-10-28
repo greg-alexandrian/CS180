@@ -1,0 +1,53 @@
+/*Hailey Horne 
+ * Exercise 3.12, create hardware store invoices
+ * 2/11/16
+ * 
+ */
+
+public class Invoice {
+private String partNumber;
+private String partDescription;
+private int itemsPurchasing;
+private double pricePerItem;
+private double totalAmount;
+public Invoice(String part, String partDesc, int totalItems, double price){
+partNumber = part;
+partDescription=partDesc;
+itemsPurchasing=totalItems;
+pricePerItem=price;
+}
+public void setPartNumber(String part){
+partNumber=part;	
+}
+public String getPartNumber(){
+	return partNumber;
+}
+public void setPartDescrtiption(){
+	partDescription= partDescription;
+}
+public String getPartDescription(){
+	return partDescription;
+}
+public void setItemsPurchasing(int count){
+if (count>0)
+	itemsPurchasing = 0; 
+}
+public int getItemsPurchasing(){
+return itemsPurchasing;
+}
+public void setPrice (double price){
+	if (price>0)
+		pricePerItem=price;
+	if (price<0)
+		pricePerItem=0;
+}
+public double getPrice(){
+	return pricePerItem;
+}
+public double getInvoiceAmount(){
+	totalAmount = getItemsPurchasing() *getPrice();
+	return totalAmount;
+}
+
+}
+

@@ -1,0 +1,32 @@
+//Code by Gavin Maloney 
+
+import java.util.Scanner;
+
+public class PositiveNumbers {
+
+	
+	  public static void main( String args[] ){
+		
+	// promp user	  
+		  System.out.println("Please enter a positive interger to be squared");
+		  
+		  Scanner input = new Scanner(System.in);
+		  int number = input.nextInt();
+		  int x = 1;
+	
+		  try {
+			if(number > 0){
+				  System.out.println(number * number);
+				  x= 2;
+			  }else{
+	// Custom exception thrown
+				  throw(new NegativeNumberException());
+			  }
+	// Custom exception caught		
+		} catch (NegativeNumberException e) {
+			System.out.println(e.getMessage());
+		}
+		  
+	
+}
+}

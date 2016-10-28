@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ExternalProjectImportWizard">
+		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\alexand\Downloads\Chapter 5 Assign"/>
+			<item value="C:\Users\alexand\Downloads\Chapter5Homework (1)"/>
+			<item value="C:\Users\alexand\Downloads\Chapter5Assignments (1)"/>
+			<item value="C:\Users\alexand\Downloads\Courses"/>
+			<item value="C:\Users\alexand\Downloads\Chapter 9 assignment (1)"/>
+			<item value="C:\Users\alexand\Downloads\Chapters 9 &amp; 10 Assign"/>
+			<item value="C:\Users\alexand\Downloads\InteritanceHomework"/>
+			<item value="C:\Users\alexand\Downloads\Chapter 9 Assignment"/>
+			<item value="C:\Users\alexand\Downloads\JavaAssignmentThirteen"/>
+			<item value="C:\Users\alexand\Downloads\Inheritance Assignment"/>
+			<item value="C:\Users\alexand\Downloads\Assignments"/>
+			<item value="H:\Greg Alexandrian\RAAD Classes and etc\RCS 217 Intro to OOP\In class Work\Session 3"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
+</section>

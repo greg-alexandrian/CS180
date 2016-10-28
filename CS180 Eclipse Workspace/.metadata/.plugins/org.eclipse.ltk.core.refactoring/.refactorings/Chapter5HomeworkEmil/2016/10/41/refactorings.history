@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;DiamondPrint.java&apos; to &apos;Student/src/(default package)&apos;&#x0D;&#x0A;- Original project: &apos;Chapter5Homework&apos;&#x0D;&#x0A;- Destination element: &apos;Student/src/(default package)&apos;&#x0D;&#x0A;- Original element: &apos;DiamondPrint.java&apos;" description="Copy compilation unit" destination="=Student/src&lt;" element1="/src&lt;{DiamondPrint.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1475679974651" units="1" version="1.0"/>
+</session>

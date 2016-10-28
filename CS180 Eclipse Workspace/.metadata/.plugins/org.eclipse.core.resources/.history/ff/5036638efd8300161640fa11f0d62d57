@@ -1,0 +1,39 @@
+package edu.ec.recursion;
+
+public class Experiments {
+
+	public static void main(String[] args) {
+		printBackwards(45678);
+	}
+	//Prints Hello n times recursively
+	public static void printHello(int n){
+		if(n <= 0){
+			return;
+		}
+		else{
+			System.out.println("Hello");
+			printHello(n-1);
+		}
+	}
+	//Recursively returns sum of even #s up till n
+	public static int getSumOfEvens(int n){
+		if(n == 0)
+			return 0;
+		else{
+			if(n%2 == 0){
+				return n + getSumOfEvens(n-1);
+			}else
+				return getSumOfEvens(n-1);
+		}
+	}
+	//This is assignment!
+	public static void printBackwards(int num){
+		if(num < 10){
+			System.out.print(num);
+		}
+		else{
+			System.out.print(num%10);
+			printBackwards(num/10);
+		}
+	}
+}

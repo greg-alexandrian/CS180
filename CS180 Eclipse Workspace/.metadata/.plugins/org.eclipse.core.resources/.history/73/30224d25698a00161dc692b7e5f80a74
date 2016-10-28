@@ -1,0 +1,20 @@
+import java.util.Scanner;
+public class Chapter5HW {
+
+	public static void main(String[] args) {
+
+		Scanner input = new Scanner(System. in );
+		System.out.print("Please enter the number of rows: ");//This asks for user input on the number of rows
+		int rows = input.nextInt();
+
+		System.out.println("Please enter the number of columns: ");//This asks for user input on the number of columns
+		int columns = input.nextInt();
+		
+		for(int height = 0; height < rows; height++){//This is the loop that retrieves the number of rows and colulmns from the user
+				for(int width = 0; width < columns; width++){
+					System.out.print("*");//At the end of the loop this prints the stars that will form the rectangle 
+				}
+			}
+
+	}
+}

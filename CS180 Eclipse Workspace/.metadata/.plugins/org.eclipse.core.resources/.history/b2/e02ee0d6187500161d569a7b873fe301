@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+
+public class CountingNumbers {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		int numPositives = 0;
+		int userInput;
+		System.out.println("Please enter an integer:");
+		userInput = input.nextInt();
+		if(userInput > 0){
+			numPositives = numPositives + 1;
+		}
+		
+
+	}
+
+}

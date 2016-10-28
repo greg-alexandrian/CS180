@@ -1,0 +1,112 @@
+/*****************************************************************************************************************************************************************
+ * Joshua Abraham
+ * Square and rectangle printer (using character entered by user)
+ * 3/3/16
+ ****************************************************************************************************************************************************************/
+import java.util.Scanner;
+public class SquaresAndRectangles {
+	public static void main(String[] args) {
+		// Declare variables and objects needed for program
+		int length = 0;
+		int widthVal = 0;
+		int heightVal = 0;
+		char userDecision;
+		char usedCharacter;
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("Welcome to the program.\n"); // Welcomes the user to the program
+		
+		// Asks user whether they would like to print a square, a rectangle, or both
+		System.out.println("Would you like to print a square, a rectangle, or both?");
+		System.out.println("Enter S for square, R for rectangle, or B for both");
+		System.out.print("Enter your choice here: ");
+		userDecision = input.next().charAt(0); // Stores only the first character entered by the user; all other characters entered are not stored
+		
+		if(userDecision == 'S' || userDecision == 's' || userDecision == 'B' || userDecision == 'b') {
+			// Prompts user to enter a character to print a square of
+			System.out.println("\nWhat character would you like the program to print a square of?");
+			System.out.print("Enter the character here: ");
+			usedCharacter = input.next().charAt(0); // Takes only the first character entered by the user; all other characters entered are not stored
+			
+			// Prompts user to enter a positive integer to represent the size of the square, stores user input in length
+			System.out.println("\nHow big would you like the square to be?");
+			System.out.print("Please enter your positive integer here: ");
+			length = input.nextInt();
+			
+			while(length <= 0) {
+				// If the user does not enter a positive integer, notifies the user of invalid input and prompts again until valid input is entered
+				System.out.println("\nERROR; YOU DID NOT ENTER A POSITIVE INTEGER.\n");
+				System.out.println("How big would you like the square to be?");
+				System.out.print("Please re-enter your positive integer here: ");
+				input.nextLine();
+				length = input.nextInt();
+			}
+			
+			// Uses static method printSquareOfCharacters to print a square of the character and side length entered
+			printSquareOfCharacters(length, usedCharacter);
+		}
+		if(userDecision == 'R' || userDecision == 'r' || userDecision == 'B' || userDecision == 'b') {
+			// Prompts user to enter a character to print a rectangle of
+			System.out.println("\nWhat character would you like the program to print a rectangle of?");
+			System.out.print("Enter the character here: ");
+			usedCharacter = input.next().charAt(0); // Takes only the first character entered by the user; all other characters entered are not stored
+			
+			// Prompts user to enter a positive integer to represent the width of the rectangle, stores the value in widthVal
+			System.out.println("\nWhat would you like the width of your rectangle to be?");
+			System.out.print("Please enter your positive integer here: ");
+			widthVal = input.nextInt();
+			
+			while(widthVal <= 0) {
+				// If the user does not enter a positive integer, notifies the user of invalid input and prompts again until valid input is entered
+				System.out.println("\nERROR; YOU DID NOT ENTER A POSITIVE INTEGER.\n");
+				System.out.println("What do you want the width of your rectangle to be?");
+				System.out.print("Please re-enter your positive integer here: ");
+				input.nextLine();
+				widthVal = input.nextInt();
+			}
+			// Prompts user to enter a positive integer to represent the height of the rectangle, stores the value in heightVal
+			System.out.println("\nWhat would you like the height of your rectangle to be?");
+			System.out.print("Please enter your positive integer here: ");
+			heightVal = input.nextInt();
+			
+			while(heightVal <= 0) {
+				// If the user does not enter a positive integer, notifies the user of invalid input and prompts again until valid input is entered
+				System.out.println("\nERROR; YOU DID NOT ENTER A POSITIVE INTEGER.\n");
+				System.out.println("What do you want the height of your rectangle to be?");
+				System.out.print("Please re-enter your positive integer here: ");
+				input.nextLine();
+				heightVal = input.nextInt();
+			}
+			
+			// Uses static method printRectangleOfCharacters to print a rectangle of the character and side lengths entered
+			printRectangleOfCharacters(widthVal, heightVal, usedCharacter);
+		}
+		if(userDecision != 'S' && userDecision != 's' && userDecision != 'R' && userDecision != 'r' && userDecision != 'B' && userDecision != 'b') {
+			// If the user enters any value other than 'S', 's', 'R', 'r', 'B', or 'b', the program prints an error message.
+			System.out.println("\nERROR: INVALID INPUT; PLEASE RESTART THE PROGRAM AND TRY AGAIN."); 
+		}
+		input.close(); // Closes link between scanner object and standard input
+		
+		System.out.println("\nThank you for using the program."); // Thanks user for using program and signifies that program has terminated.
+	}
+	public static void printSquareOfCharacters(int sideLength, char fillCharacter) {
+		System.out.println(); // Used to space output and make it more clean
+		// Nested for loop. prints sideLength rows and sideLength columns of the character given.
+		for(int rowNum = 0; rowNum < sideLength; rowNum++) {
+			for(int columnNum = 0; columnNum < sideLength; columnNum++) {
+				System.out.print(fillCharacter);
+			}
+			System.out.println();
+		}
+	}
+	public static void printRectangleOfCharacters(int width, int height, char fillCharacter) {
+		System.out.println(); // Used to space output and make it more clean.
+		// Nested for loop. prints height rows and width columns of the character given.
+		for(int rowNum = 0; rowNum < height; rowNum++) {
+			for(int columnNum = 0; columnNum < width; columnNum++) {
+				System.out.print(fillCharacter);
+			}
+			System.out.println();
+		}
+	}
+}

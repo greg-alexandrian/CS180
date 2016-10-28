@@ -1,0 +1,19 @@
+
+import java.security.SecureRandom;
+public class Die 
+{
+	public static void main(String[] args)
+	{
+		SecureRandom randomNumbers = new SecureRandom();
+		int[] numberOfRolls = new int[7]; //Creates an array of counted rolls.
+		// roll die 36000 times
+		for (int roll = 1; roll <= 36000; roll++) {
+			++numberOfRolls[1 + randomNumbers.nextInt(6)];  //range if index's: 0-6, returns number between 1 and 6, and increments each respective element of the index
+		}		
+		System.out.printf("%s%10s%n", "Sides  ", "Number of times each side came up");
+		// output each array element's value
+		for (int side = 1; side < numberOfRolls.length; side++)
+			System.out.printf("%4d%10d%n", side, numberOfRolls[side]); //outputting the possible index w/ corresponding index 
+	}
+
+}

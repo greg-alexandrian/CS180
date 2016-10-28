@@ -1,0 +1,17 @@
+/***********************************************************************************************************************************************
+ * Joshua Abraham
+ * Die Test application
+ * 4/26/16
+ **********************************************************************************************************************************************/
+public class DieTest {
+	public static void main(String[] args) {
+		Die six_sides = new Die(); // Creates Die object
+		
+		// Rolls the die 36,000 times
+		for(int i = 0; i < 36000; i++) {
+			six_sides.rollDie();
+		}
+		
+		six_sides.printStatistics(); // Prints out the results
+	}
+}

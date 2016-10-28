@@ -1,0 +1,46 @@
+/*
+ * 1.) Create a program that will display a Rectangle
+ * 2.) Import a scanner for keyboard inputs
+ * 2.)First I will declare the integers that will serve as the height, and the width of the rectangle.
+ * 3.) The first integer will be named height which will dictate the number of asterisks used to make the height of the rectangle
+ * 4.) The second integer will be named width which will dictate the number of asterisks used to make the width of the rectangle
+ */
+
+import java.util.Scanner;
+public class Rectangle 
+{
+public static void main(String[] args)
+{
+	//Input variables for the height and width of the rectangle
+int height;
+int width;
+Scanner keyboard = new Scanner(System.in); 
+//Prompt for asking how high you want the rectangle to be
+System.out.println("Please enter the height of the rectangle.");
+height = keyboard.nextInt();
+//If statement for the inputs for the height of the rectangle
+if (height < 0)
+{
+    height = 1;
+}
+//Prompt for asking how wide you want the rectangle to be
+System.out.println("Please enter the width of the rectangle.");
+width = keyboard.nextInt();
+//If statement for the inputs for the width of the rectangle
+if(width < 0)
+{
+    width = 1;
+}
+//For loops that defines the height and width conditions and how many asterisks the loop will produce based on the integers entered
+for(int h = 0; h < height; h++) 
+{ 
+    for(int w = 0; w < width; w++) 
+    { 
+        System.out.print("*"); 
+    } 
+    System.out.println(" "); 
+} 
+}
+}
+
+//Shahbaz Durrani

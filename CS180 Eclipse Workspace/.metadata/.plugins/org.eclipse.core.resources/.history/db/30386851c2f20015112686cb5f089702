@@ -1,0 +1,58 @@
+/*****************************************************************************************************************************************************************
+ * Joshua Abraham
+ * Counties Storage/Printer Program
+ * 3/22/16
+ ****************************************************************************************************************************************************************/
+import java.util.Scanner;
+public class CountiesInState {
+	public static void main(String[] args) {
+		// Declare arrays, variables and objects needed for program. counties stores names of counties, populations stores populations of counties, and inputString
+		// and inputInt store values read by the scanner 
+		String[] counties = new String[20];
+		int[] populations = new int[20];
+		String inputString = "";
+		int counter = 0; // Counter variable for incrementing in the while loop
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("Welcome to the program"); // Welcomes the user to the program
+		
+		// While loop which is partially sentinel-controlled. Keyword "STOP" exits the loop early, and there is a maximum of 20 input sets before the while loop
+		// automatically terminates. Prompts the user for a county name, and the population for that county.
+		while(inputString.compareTo("STOP") != 0 && counter < 20) {
+			System.out.println("Please enter the name of a county, or enter \"STOP\" to quit the program");
+			inputString = input.nextLine();
+			// If the sentinel value is not entered, the program asks for the population of the county
+			if(inputString.compareTo("STOP") != 0) {
+				counties[counter] = inputString;
+				System.out.println("Please enter the population of " + counties[counter] + " county.");
+				populations[counter] = input.nextInt();
+				input.nextLine();
+				counter++; // Increments the counter
+			}
+		}
+		
+		System.out.println("\n");
+		if(counter == 0) {
+			System.out.println("No counties were entered");
+		}
+		else {
+			System.out.println("    County Name\t\tPopulation"); // Creates a table-like appearance for the output to make it more clean
+		}
+		int linePosition = 3; // Used to keep track of how many characters have been entered on a line
+		// For loop which prints each corresponding county and population on lines by themselves, separated by the appropriate number of tabs.
+		for(int index = 0; index < counter; index++) {
+			linePosition = 4;
+			if(index < 9) System.out.print(" ");
+			System.out.print((index + 1) + ". " + counties[index] + " "); // Prints out the line number and the county name.
+			linePosition += counties[index].length() + 1;
+			// This while loop prints tabs until the cursor is at the same position as the P in population on the line
+			while(linePosition < 24) {
+				System.out.print("\t");
+				linePosition+= (8 - linePosition % 8);
+			}
+			System.out.println(populations[index]); // Prints the population and goes to the next line
+		}
+		
+		input.close(); // Closes link between the scanner and standard input
+	}
+}

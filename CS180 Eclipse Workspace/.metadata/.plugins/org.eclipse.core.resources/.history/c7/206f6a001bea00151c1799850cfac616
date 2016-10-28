@@ -1,0 +1,76 @@
+/*
+ * Homework 5.30
+ * Written by Ryan Grotte
+ * 9 March 2016
+ */
+
+package Problem2;
+
+import java.util.*;
+
+// A program which generates a random number in range suggested by the user, then asks the user to guess it
+
+public class guesstheNumber {
+
+	public static void main(String[] args) {
+		
+		// variable declarations
+		int range;
+		Scanner input = new Scanner(System.in);
+		char userInput = 'y'; // set as y so while loop will run at least once
+		
+		// while loop will run through the game at least once, then ask the user whether she wants to play again
+		while ((userInput == 'y') || (userInput == 'Y'))
+			{
+			
+			// prompts the user for range within which the random number will be generated
+			System.out.print("Enter the range of positive integers within which you'd like to guess: ");
+			range = input.nextInt();
+			
+			// The following line 1) passes range to the method getSecretNumber to return a random number,
+			// then 2) sends the range and the returned random number to the method playGame.
+			playGame(range, getSecretNumber(range));
+			
+			// Prompts the user to play again. The value for userInput is checked against the while loop;
+			// so long as the user enters y or Y, the loop continues.
+			System.out.print("Do you want to play again? (Press y for yes): ");
+			userInput = input.next().charAt(0);
+			
+			}		
+	}
+	
+	public static int getSecretNumber(int range) { // generates a random number within the parameter range
+		
+		Random randomNumbers = new Random();
+		int secretNumber = 1 + randomNumbers.nextInt(range);
+		
+		return secretNumber;	
+	}
+	
+	public static void playGame (int range, int secretNumber){ // runs the guessing game until the user wins
+		
+		Scanner input = new Scanner(System.in);
+		System.out.print("Guess a number between 1 and " + range +": "); // user's initial guess
+		int guess = input.nextInt();
+		
+		while (guess != secretNumber)  // initiates guessing loop which completes when the user guesses the number
+		{					
+			if (guess < secretNumber) { // tests if the guess is too low
+				System.out.print("Too low, try again: ");
+				guess = input.nextInt();
+			}
+			else if (guess > secretNumber) { // tests if the guess is too high
+				System.out.print("Too high, try again: ");
+				guess = input.nextInt();
+			}
+		}
+		
+		System.out.println("Congratulations, you've guessed the number!");
+		
+	}
+	
+	
+	
+	
+
+}
